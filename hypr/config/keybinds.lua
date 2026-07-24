@@ -22,6 +22,10 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + Space", hl.dsp.exec_cmd(menu))
 -- change split side to side and top and bottom mainmod + J
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+-- power menu CTL + ALT + DEL
+hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd("pkill -x wlogout || wlogout"))
+-- screen shot SHIFT + SUPER + S
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('FILE=~/Pictures/$(date +%s.png) && grim -g "$(slurp)" "$FILE" && loupe "$FILE"'))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

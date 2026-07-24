@@ -31,6 +31,16 @@ hl.window_rule({
     no_focus = true,
 })
 
+-- Targets Loupe to float, center, and resize cleanly
+hl.window_rule({
+    match = {
+        class = "org.gnome.Loupe"
+    },
+    float = true,
+    center = true,
+    size = "800 600"
+})
+
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
 --     name  = "no-anim-overlay",

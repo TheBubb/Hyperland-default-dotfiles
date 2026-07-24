@@ -18,6 +18,8 @@ local menu        = "hyprlauncher"
 -- Or execute your favorite apps at launch like this:
 --
  hl.on("hyprland.start", function () 
+   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP") -- must be first
+
    hl.exec_cmd(terminal)
    hl.exec_cmd("nm-applet")
    hl.exec_cmd("waybar & hyprpaper")
@@ -26,7 +28,7 @@ local menu        = "hyprlauncher"
    hl.exec_cmd("wl-paste --type text --watch cliphist store")
    hl.exec_cmd("wl-paste --type image --watch cliphist store") 
    hl.exec_cmd("walker --gapplication-service")
-   hl.exec_once("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+   hl.exec_cmd("systemctl --user start elephant.service")
 end)
 
 
